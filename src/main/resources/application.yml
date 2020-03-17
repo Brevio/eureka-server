@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: eureka-server
+  boot:
+      admin: 
+        client:
+          url: http://localhost:9010
+eureka:  client:    fetch-registry: false
+    register-with-eureka: false
+  server:    renewal-percent-threshold: 0.1
+    enable-self-preservation: false
+    response-cache-update-interval-ms: 500
+    eviction-interval-timer-in-ms: 500
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: "@project.name@"
+    version: "@project.version@"
