@@ -1,3 +1,5 @@
+server:
+  port: 8761
 spring:
   application:
     name: eureka-server
@@ -5,10 +7,13 @@ spring:
       admin: 
         client:
           url: http://localhost:9010
-eureka:  client:    fetch-registry: false
+eureka:
+  client:
+    fetch-registry: false
     register-with-eureka: false
-  server:    renewal-percent-threshold: 0.1
-    enable-self-preservation: false
+  server:
+    renewal-percent-threshold: 0.1
+    enable-self-preservation: true
     response-cache-update-interval-ms: 500
     eviction-interval-timer-in-ms: 500
 management:
